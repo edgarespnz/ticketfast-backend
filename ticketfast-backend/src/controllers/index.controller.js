@@ -1,13 +1,14 @@
 const { Pool } = require('pg');
 const transporter = require('../config/mailer')
+const {DB_HOST , DB_USER , DB_PASSWORD , DB_NAME  , DB_PORT} = require('../config/config.js')
 
 //aquí se definen los datos de acceso de la database para hacer las consultas.
 const pool = new Pool({
-  host: 'localhost',
-  user: 'postgres',
-  password: 'postgres',
-  database: 'ticketfast',
-  port: '5432'
+  host: DB_HOST,
+  user: DB_USER,
+  password: DB_PASSWORD,
+  database: DB_NAME,
+  port: DB_PORT
 })
 
 //enpoint para obtener todas las anp
